@@ -1,0 +1,26 @@
+name: MobShy
+version: 1.0.0-SNAPSHOT
+description: A simple plugin that sets the game Difficulty to Peaceful when chicken players are logged in and restores it to Normal when they leave.
+author: pwasson
+
+main: com.me.pwasson.mobshy.MobShyPlugin
+
+commands:
+  mobshy:
+    description: adds or removes a player from the list of chickens.
+    usage: <command> add <player name> | remove <player name> | list
+
+permissions:
+    mobshy.*:
+        description: Access to all MobShy commands
+        children:
+            mobshy.modify: true
+            mobshy.list: true
+        default: op
+    mobshy.modify:
+        description: Allows adding or removing players to/from MobShy's chicken list.
+        default: op
+    mobshy.list:
+        description: Allows listing MobShy's chicken list.
+        default: op
+
